@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section id="page1" class="page active">
+  <div class="proposal-card">
+    <h1>Will you be my Valentine? 💖</h1>
+    <p>There’s only one right answer…</p>
+
+    <div class="buttons-area">
+      <button id="yesBtn" class="btn primary">Yes 💖</button>
+
+      <div class="no-zone">
+        <button id="noBtn" class="btn secondary">No 😶</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOADER -->
+<section id="loader" class="page">
+  <div class="loader-content">
+    <div class="diamond-spinner"></div>
+    <p>Preparing something special… 💎</p>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="page">
+  <h2>Relax… and paint 💎</h2>
+
+  <div class="diamond-wrapper">
+    <div class="diamond-container">
+
+      <!-- ✅ UPDATED PALETTE (MATCHES JS EXACTLY) -->
+      <div class="palette">
+        <div class="color" style="background:#f2c1a0" data-index="0"><span>1</span></div>
+        <div class="color" style="background:#d9a07c" data-index="1"><span>2</span></div>
+        <div class="color" style="background:#5a3b2e;color:#fff" data-index="2"><span>3</span></div>
+        <div class="color" style="background:#2e2a2a;color:#fff" data-index="3"><span>4</span></div>
+        <div class="color" style="background:#7b8c6d" data-index="4"><span>5</span></div>
+        <div class="color" style="background:#9aa4b1" data-index="5"><span>6</span></div>
+      </div>
+
+     <img
+  id="sourceImage"
+  src="https://i.ibb.co/rfQZ4sqf/abc.jpg"
+  crossorigin="anonymous"
+  hidden
+>
+
+      <div id="diamondCanvas" class="photo-canvas"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAINT COMPLETE -->
+<div id="paintComplete" class="modal hidden">
+  <div class="modal-box success center">
+    <h2>Hooray! 🎉</h2>
+    <p>You did great.</p>
+    <p id="asAlways" class="soft hidden">as always 😊</p>
+    <button id="toShop" class="btn primary">Claim your bumper prize →</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<section id="page3" class="page">
+  <div class="browser-frame">
+    <div class="browser-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+
+    <div class="browser-body">
+      <div class="shop-panel">
+        <div class="product" data-item="Unlimited Kisses Voucher 💋">
+          <h3>Unlimited Kisses Voucher 💋</h3>
+          <button class="btn secondary">Add to Cart</button>
+        </div>
+
+        <div class="product" data-item="Mystery Box 🎁">
+          <h3>Mystery Box 🎁</h3>
+          <button class="btn secondary">Add to Cart</button>
+        </div>
+
+        <div class="product" data-item="A Letter for You ✉️">
+          <h3>A Letter for You ✉️</h3>
+          <button class="btn secondary">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="cart-panel">
+        <h3>Your Cart 💖</h3>
+        <div id="cartTabs"></div>
+        <button id="checkoutBtn" class="btn primary fixed-checkout" disabled>
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<div id="paymentModal" class="modal hidden">
+  <div class="modal-box payment center">
+    <h3>Choose Payment Method</h3>
+    <button id="kissPayment" class="btn kiss">Kiss 💋</button>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div id="successModal" class="modal hidden">
+  <div class="modal-box success final center">
+    <h2>Congratulations 💖</h2>
+    <p>Your gifts will be delivered shortly.</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
