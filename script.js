@@ -13,6 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => showPage('page2'), 1200);
   };
 
+/* ===============================
+   PAGE 1 – PASSWORD GATE
+   =============================== */
+
+const passwordScreen = document.getElementById('passwordScreen');
+const memoryContent = document.getElementById('memoryContent');
+const enterBtn = document.getElementById('enterBtn');
+const passwordInput = document.getElementById('passwordInput');
+const passwordError = document.getElementById('passwordError');
+
+if (enterBtn) {
+  enterBtn.onclick = () => {
+    const value = passwordInput.value.trim().toLowerCase();
+
+    if (value === 'cornetto') {
+      passwordScreen.classList.add('hidden');
+      memoryContent.classList.remove('hidden');
+      startCarousel();
+    } else {
+      passwordError.classList.remove('hidden');
+    }
+  };
+}
+
+
   /* ===============================
      PAGE 1 – NO BUTTON (UNCHANGED)
      =============================== */
@@ -382,4 +407,40 @@ if (toShopBtn) {
 
 }
 
+/* ===== PAGE 1 – MEMORY LANE CAROUSEL ===== */
+
+const slidesEl = document.getElementById('slides');
+const slides = document.querySelectorAll('.slide');
+const valentineButtons = document.getElementById('valentineButtons');
+
+let currentIndex = 0;
+const totalSlides = slides.length;
+
+// Make sure buttons are hidden initially
+if (valentineButtons) {
+  valentineButtons.classList.add('hidden');
+}
+
+if (slidesEl && slides.length > 0) {
+  const carouselInterval = setInterval(() => {
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+      slidesEl.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      // When last slide is reached
+      if (currentIndex === totalSlides - 1) {
+        if (valentineButtons) {
+          valentineButtons.classList.remove('hidden');
+        }
+        clearInterval(carouselInterval);
+      }
+    }
+  }, 2500);
+}
+
+
 });
+
+
+
+
