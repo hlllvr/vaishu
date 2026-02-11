@@ -7,21 +7,80 @@
 </head>
 <body>
 
-<!-- PAGE 1 -->
 <section id="page1" class="page active">
-  <div class="proposal-card">
-    <h1>Will you be my Valentine? 💖</h1>
-    <p>There’s only one right answer…</p>
 
-    <div class="buttons-area">
+  <!-- PASSWORD SCREEN -->
+  <div id="passwordScreen" class="password-screen">
+    <h2>Please enter the password to enter the Memory Lane</h2>
+    <p class="hint">Hint: The name of the first dessert on our first date 🍨</p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button id="enterBtn" class="btn primary">Enter 💖</button>
+    <p id="passwordError" class="error hidden">Wrong password 😜</p>
+  </div>
+
+  <!-- MEMORY CONTENT (hidden initially) -->
+  <div id="memoryContent" class="memory-content hidden">
+
+    <div class="carousel">
+      <div class="slides" id="slides">
+
+       <div class="slide"> <img src="auto.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="besan pudi.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 10.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 2.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 3.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 4.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 5.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 6.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 7.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 8.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="blr 9.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="cubbon park date.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="date 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="date 2.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="date 3.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="date 4.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="date 5.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="date 6.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="flwr 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="game 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="holi 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="holi 2.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="Hyd 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="library.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="london curry house.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="outing 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="panipuri outing.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="pune 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="PXL_20230930_150933575.MP.jpg" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 1.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 2.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 3.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 4.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 5.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 6.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 7.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 8.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="sibm p 9.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="van gogh 2.png" alt=Memory 1"> </div>
+<div class="slide"> <img src="van gogh.png" alt=Memory 1"> </div>
+
+
+        <div class="slide final-slide"><h2>Thank you mithuda! 💫</h2></div>
+        <div class="slide final-slide"><h2>for making my life beautiful 💕</h2></div>
+        <div class="slide final-slide"><h2>🌹</h2></div>
+        <div class="slide final-slide"><h2>Will you be my valentine? 💖</h2></div>
+
+      </div>
+    </div>
+
+    <div id="valentineButtons" class="buttons-area hidden">
       <button id="yesBtn" class="btn primary">Yes 💖</button>
-
       <div class="no-zone">
         <button id="noBtn" class="btn secondary">No 😶</button>
       </div>
     </div>
-  </div>
-</section>
 
 <!-- LOADER -->
 <section id="loader" class="page">
@@ -29,11 +88,15 @@
     <div class="diamond-spinner"></div>
     <p>Preparing something special… 💎</p>
   </div>
+
+  </div>
+
+
 </section>
 
 <!-- PAGE 2 -->
 <section id="page2" class="page">
-  <h2>Relax… and paint 💎</h2>
+  <h2>Let's go on a 💎 painting date!</h2>
 
   <div class="diamond-wrapper">
     <div class="diamond-container">
@@ -52,8 +115,7 @@
   id="sourceImage"
   src="https://i.ibb.co/rfQZ4sqf/abc.jpg"
   crossorigin="anonymous"
-  hidden
->
+  hidden>
 
       <div id="diamondCanvas" class="photo-canvas"></div>
 
@@ -83,7 +145,7 @@
     <div class="browser-body">
       <div class="shop-panel">
         <div class="product" data-item="Unlimited Kisses Voucher 💋">
-          <h3>Unlimited Kisses Voucher 💋</h3>
+          <h3>On-hire cook for 1 meal</h3>
           <button class="btn secondary">Add to Cart</button>
         </div>
 
