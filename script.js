@@ -28,12 +28,30 @@ if (enterBtn) {
     const value = passwordInput.value.trim().toLowerCase();
 
     if (value === 'cornetto') {
-      passwordScreen.classList.add('hidden');
-      memoryContent.classList.remove('hidden');
-      startCarousel();
-    } else {
-      passwordError.classList.remove('hidden');
-    }
+
+  passwordScreen.classList.add('hidden');
+  memoryContent.classList.remove('hidden');
+
+  // Start music
+  const music = document.getElementById('bgMusic');
+  if (music) {
+    music.currentTime = 0;
+    music.volume = 0;
+    music.play();
+
+    let fade = setInterval(() => {
+      if (music.volume < 0.9) {
+        music.volume += 0.05;
+      } else {
+        clearInterval(fade);
+      }
+    }, 200);
+  }
+
+  // NOW start slideshow
+  startCarousel();
+}
+
   };
 }
 
@@ -409,33 +427,39 @@ if (toShopBtn) {
 
 /* ===== PAGE 1 – MEMORY LANE CAROUSEL ===== */
 
+// ===== Carousel Setup Variables =====
 const slidesEl = document.getElementById('slides');
-const slides = document.querySelectorAll('.slide');
+const slides = slidesEl ? slidesEl.children : [];
+const totalSlides = slides.length;
 const valentineButtons = document.getElementById('valentineButtons');
 
 let currentIndex = 0;
-const totalSlides = slides.length;
 
-// Make sure buttons are hidden initially
-if (valentineButtons) {
-  valentineButtons.classList.add('hidden');
-}
 
-if (slidesEl && slides.length > 0) {
+function startCarousel() {
+
+  if (!slidesEl || slides.length === 0) return;
+
+  currentIndex = 0;
+  slidesEl.style.transform = `translateX(0%)`;
+
   const carouselInterval = setInterval(() => {
+
     if (currentIndex < totalSlides - 1) {
       currentIndex++;
       slidesEl.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-      // When last slide is reached
       if (currentIndex === totalSlides - 1) {
         if (valentineButtons) {
           valentineButtons.classList.remove('hidden');
         }
         clearInterval(carouselInterval);
       }
+
     }
+
   }, 2500);
+
 }
 
 
